@@ -1,0 +1,25 @@
+{
+  "name": "chapapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "SHWETA",
+  "license": "ISC",
+  "dependencies": {
+    "aws-sdk": "^2.1397.0",
+    "bcrypt": "^5.1.0",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "dotenv": "^16.1.4",
+    "express": "^4.18.2",
+    "jsonwebtoken": "^9.0.0",
+    "mysql2": "^3.3.5",
+    "sequelize": "^6.32.0",
+    "socket.io": "^4.6.2",
+    "socket.io-client": "^4.6.2",
+    "socketio": "^1.0.0"
+  }
+}
