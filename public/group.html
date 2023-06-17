@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Group Details</title>
+  <link rel="stylesheet" href="group.css">
+
+  </head>
+<body>
+
+  <h1>Group Details</h1>
+  <form id="groupMessageForm">
+    <input type="text" id="message" name="message" placeholder="Enter your message" required>
+    <button id="sendButton" type="submit">Send</button>
+  </form>
+  <br>
+
+  <input type="file" id="mediaFile" />
+  <button id="sendButton" onclick="sendFile()">Send File</button>
+  <br>
+  <button id="showUsersButton">Show Users</button>
+  <div id="addUser">
+    <select id="userList"></select>
+  </div>
+  <ul id="groupDropdown"></ul>
+
+  <h2>Chat Messages</h2>
+  <ul id="chats"></ul>
+
+  <h2>Group Members</h2>
+  <div>
+    <select id="MembersDropdown">
+      <option value="" selected disabled>Select a member</option>
+    </select>
+    <button id="makeAdminButton">Make Admin</button>
+    <button id="removeFromGroupButton" type = "button">Remove from Group</button>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+  <script src="group.js"></script>
+</body>
+</html>

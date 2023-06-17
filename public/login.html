@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login</title>
+  <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  <div class="container">
+    <h2>Login</h2>
+    <form id="loginForm">
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" required>
+
+      <button type="submit">Log in</button>
+    </form>
+    <p>Don't have an account? <a href="/signup">Sign up</a></p> 
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.4.0/axios.min.js"></script>
+  <script>
+    async function login(e) {
+      e.preventDefault();
+      const loginDetails = {
+       // name : e.target.name.value,
+        email: e.target.email.value,
+        password: e.target.password.value
+      };
+      try {
+        const response = await axios.post('/user/login', loginDetails);
+        if (response.status === 200) {
+          alert(response.data.message);
+          localStorage.setItem('token', response.data.token);
+          window.location.href = "chat.html"; 
+        }
+      } catch (err) {
+        console.log(err);
+        alert("Failed to log in. Please check your credentials.");
+      }
+    }
+    document.getElementById('loginForm').addEventListener('submit', login);
+  </script>
+</body>
+</html>
